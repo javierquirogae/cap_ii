@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not aisle_lists %}
+<h2>You must create a meal plan before you can generate a shoppign list</h2>
+{% else %}
+<div id="shoppign_list">
+    <h2>My shopping list has {{ count }} items</h2>
+    {% for aisle_list in aisle_lists %}
+    <div class="card-body" >
+        <h4 class="title">
+            <b>{{aisle_list[0].aisle}}</b>
+        </h4><br>
+        {% for aisle in aisle_list %}
+        <span class="item">
+            <b>[{{aisle.amount_us}} {{aisle.unit_us}}</b> of {{aisle.name}}<b>]</b>, 
+        </span>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

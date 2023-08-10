@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="plan">
+    <h2>My plan has {{ count }} meal(s) </h2>
+    {% for meal in meals %}
+    <div class="card">
+        <div class="card-body" id="{{meal.meal_id}}">
+            {% if meal.day_of_week%}
+            <span class="day">
+                {{meal.day_of_week}}
+            </span>
+            {% endif %}
+            {% if meal.meal_of_day %}
+            <span class="meal"><i> {{meal.meal_of_day}}</i></span>
+            {% endif %}
+            <br>
+            <span class="title">
+                <h3 class="add_ons_m" id="{{meal.meal_id}}">{{meal.title}} </h3>
+            </span>
+            <div style="display: flex;">
+                <form method="GET" action="/edit_meal/{{meal.meal_id}}">
+                    <button class="btn btn-outline-primary">
+                        Whcih meal?
+                    </button>
+                </form>
+                <form method="POST" action="/delete_meal/{{meal.meal_id}}">
+                    <button class="btn btn-outline-warning">
+                        remove meal from plan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

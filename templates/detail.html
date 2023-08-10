@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+<h2 id="{{recipe_id}}">Details</h2>
+<div id="delete_div"></div>
+<div id="res"></div>
+
+<script src="https://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://unpkg.com/lodash"></script>
+<script src="/static/details.js"></script>
+
+{% endblock %}

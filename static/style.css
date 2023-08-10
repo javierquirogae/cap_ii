@@ -1,0 +1,56 @@
+.link:hover{
+    font-weight: 900;
+    text-decoration: underline;
+    color: blue;
+}
+
+.delete{
+    font-weight: 900;
+    text-decoration: underline;
+    color: red;
+}
+
+.check{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: green;
+}
+.day{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: rgba(1, 48, 67, 0.702);
+}
+
+.meal{
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: rgba(2, 1, 45, 0.649);
+}
+
+.star{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: red;
+}
+.note{
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: rgba(9, 8, 42, 0.689);
+}
+
+.title{
+    font-weight: 550;
+    font-size: 1.3rem;
+    color: rgba(80, 11, 11, 0.431);
+    display: inline-block;
+    vertical-align: top;
+}
+.item{
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: rgba(13, 9, 18, 0.943);
+    display: inline-block;
+    vertical-align: top;
+}
+
+

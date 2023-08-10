@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="liked_recipe_list">
+    <h2>My {{ count }} Favorite </h2>
+    {% for like in likes %}
+    <div class="card">
+        <div class="card-body" id="{{like.recipe_id}}">
+            {% if like.used %}
+            <span class="check">
+                &#x2713;
+            </span>
+            {% endif %}
+
+            <span class="title">
+                <h3 class="add_ons_l" id="{{like.recipe_id}}">{{like.title}} </h3>
+            </span>
+
+            
+            <br>
+
+            {% if like.notes %}
+            <span class="note"><i> {{like.notes}}</i></span> <br>
+            {% endif %}
+
+            <div style="display: flex;">
+                <form method="GET" action="/edit_recipe/{{like.recipe_id}}">
+                    <button class="btn btn-outline-primary">
+                        add/change my input
+                    </button>
+                </form>
+                <form method="POST" action="/add_to_plan/{{like.recipe_id}}/{{like.title}}">
+                    <button class="btn btn-outline-success">
+                        add to meal plan
+                    </button>
+                </form>
+                <form method="POST" action="/delete_recipe/{{like.recipe_id}}">
+                    <button class="btn btn-outline-warning">
+                        remove from favorites
+                    </button>
+                </form>
+                <span class="star">
+                    {% for i in range(like.rating) %}
+                    &#9733;
+                    {% endfor %}
+                </span> <br>
+            </div>
+            
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
