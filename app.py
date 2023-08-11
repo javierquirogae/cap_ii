@@ -32,12 +32,9 @@ meal_to_numeric = {
     'Dinner': 3
 }
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://seaotsudaxmbqu:9059baa106ec77b79200c5dded8468463cb24e461408e2a1d026a8690ac83fc6@ec2-34-202-127-5.compute-1.amazonaws.com:5432/d1v13vp90lc305'
-# (os.environ.get(
-#     'postgres://seaotsudaxmbqu:9059baa106ec77b79200c5dded8468463cb24e461408e2a1d026a8690ac83fc6@ec2-34-202-127-5.compute-1.amazonaws.com:5432/d1v13vp90lc305', 
-#     'postgresql:///sporky'))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tghgifhb:aeMgA7oN93TEE6TQMNN8YvAtBpqH0Dr7@bubble.db.elephantsql.com/tghgifhb'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sporky' 
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///sporky' 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
